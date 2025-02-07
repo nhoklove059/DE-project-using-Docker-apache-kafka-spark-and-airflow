@@ -265,5 +265,3 @@ scraper_task >> spark_task  # Task Dependency
 * Deploy on  **AWS (S3, EMR, Glue, Redshift)** .
 * Add  **Machine Learning for Price Prediction** .
 * Implement  **Delta Lake for Big Data Processing** .
-
-Would you like me to create a **GitHub repository** with all  **Docker, Airflow, Spark & Python scripts** ?
