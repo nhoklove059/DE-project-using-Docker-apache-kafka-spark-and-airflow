@@ -5,6 +5,11 @@ from kafka import KafkaConsumer
 import json
 import psycopg2
 
+import os
+
+os.environ["JAVA_HOME"] = "C:/Program Files/Java/jdk-11"
+os.environ["PYSPARK_PYTHON"] = "C:/Users/quanghung/AppData/Local/Programs/Python/Python312/python.exe"
+
 # Kafka & PostgreSQL Config
 KAFKA_TOPIC = "thegioididong_products"
 KAFKA_SERVER = "kafka:9092"  # Use Docker container name
