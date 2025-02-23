@@ -1,0 +1,27 @@
+driverId,url,givenName,familyName,dateOfBirth,nationality,permanentNumber,code
+alesi,http://en.wikipedia.org/wiki/Jean_Alesi,Jean,Alesi,1964-06-11,French,,
+alonso,http://en.wikipedia.org/wiki/Fernando_Alonso,Fernando,Alonso,1981-07-29,Spanish,14,ALO
+barrichello,http://en.wikipedia.org/wiki/Rubens_Barrichello,Rubens,Barrichello,1972-05-23,Brazilian,,BAR
+bernoldi,http://en.wikipedia.org/wiki/Enrique_Bernoldi,Enrique,Bernoldi,1978-10-19,Brazilian,,
+burti,http://en.wikipedia.org/wiki/Luciano_Burti,Luciano,Burti,1975-03-05,Brazilian,,
+button,http://en.wikipedia.org/wiki/Jenson_Button,Jenson,Button,1980-01-19,British,22,BUT
+coulthard,http://en.wikipedia.org/wiki/David_Coulthard,David,Coulthard,1971-03-27,British,,COU
+rosa,http://en.wikipedia.org/wiki/Pedro_de_la_Rosa,Pedro,de la Rosa,1971-02-24,Spanish,,DLR
+enge,http://en.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Enge,Tomáš,Enge,1976-09-11,Czech,,
+fisichella,http://en.wikipedia.org/wiki/Giancarlo_Fisichella,Giancarlo,Fisichella,1973-01-14,Italian,,FIS
+frentzen,http://en.wikipedia.org/wiki/Heinz-Harald_Frentzen,Heinz-Harald,Frentzen,1967-05-18,German,,
+hakkinen,http://en.wikipedia.org/wiki/Mika_H%C3%A4kkinen,Mika,Häkkinen,1968-09-28,Finnish,,
+heidfeld,http://en.wikipedia.org/wiki/Nick_Heidfeld,Nick,Heidfeld,1977-05-10,German,,HEI
+irvine,http://en.wikipedia.org/wiki/Eddie_Irvine,Eddie,Irvine,1965-11-10,British,,
+marques,http://en.wikipedia.org/wiki/Tarso_Marques,Tarso,Marques,1976-01-19,Brazilian,,
+mazzacane,http://en.wikipedia.org/wiki/Gast%C3%B3n_Mazzacane,Gastón,Mazzacane,1975-05-08,Argentine,,
+montoya,http://en.wikipedia.org/wiki/Juan_Pablo_Montoya,Juan,Pablo Montoya,1975-09-20,Colombian,,MON
+panis,http://en.wikipedia.org/wiki/Olivier_Panis,Olivier,Panis,1966-09-02,French,,
+raikkonen,http://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen,Kimi,Räikkönen,1979-10-17,Finnish,7,RAI
+michael_schumacher,http://en.wikipedia.org/wiki/Michael_Schumacher,Michael,Schumacher,1969-01-03,German,,MSC
+ralf_schumacher,http://en.wikipedia.org/wiki/Ralf_Schumacher,Ralf,Schumacher,1975-06-30,German,,SCH
+trulli,http://en.wikipedia.org/wiki/Jarno_Trulli,Jarno,Trulli,1974-07-13,Italian,,TRU
+verstappen,http://en.wikipedia.org/wiki/Jos_Verstappen,Jos,Verstappen,1972-03-04,Dutch,,
+villeneuve,http://en.wikipedia.org/wiki/Jacques_Villeneuve,Jacques,Villeneuve,1971-04-09,Canadian,,VIL
+yoong,http://en.wikipedia.org/wiki/Alex_Yoong,Alex,Yoong,1976-07-20,Malaysian,,
+zonta,http://en.wikipedia.org/wiki/Ricardo_Zonta,Ricardo,Zonta,1976-03-23,Brazilian,,ZON

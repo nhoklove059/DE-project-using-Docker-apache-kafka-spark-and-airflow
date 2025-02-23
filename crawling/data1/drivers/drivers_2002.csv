@@ -1,0 +1,24 @@
+driverId,code,url,givenName,familyName,dateOfBirth,nationality,permanentNumber
+barrichello,BAR,http://en.wikipedia.org/wiki/Rubens_Barrichello,Rubens,Barrichello,1972-05-23,Brazilian,
+bernoldi,,http://en.wikipedia.org/wiki/Enrique_Bernoldi,Enrique,Bernoldi,1978-10-19,Brazilian,
+button,BUT,http://en.wikipedia.org/wiki/Jenson_Button,Jenson,Button,1980-01-19,British,22
+coulthard,COU,http://en.wikipedia.org/wiki/David_Coulthard,David,Coulthard,1971-03-27,British,
+davidson,DAV,http://en.wikipedia.org/wiki/Anthony_Davidson,Anthony,Davidson,1979-04-18,British,
+rosa,DLR,http://en.wikipedia.org/wiki/Pedro_de_la_Rosa,Pedro,de la Rosa,1971-02-24,Spanish,
+fisichella,FIS,http://en.wikipedia.org/wiki/Giancarlo_Fisichella,Giancarlo,Fisichella,1973-01-14,Italian,
+frentzen,,http://en.wikipedia.org/wiki/Heinz-Harald_Frentzen,Heinz-Harald,Frentzen,1967-05-18,German,
+heidfeld,HEI,http://en.wikipedia.org/wiki/Nick_Heidfeld,Nick,Heidfeld,1977-05-10,German,
+irvine,,http://en.wikipedia.org/wiki/Eddie_Irvine,Eddie,Irvine,1965-11-10,British,
+massa,MAS,http://en.wikipedia.org/wiki/Felipe_Massa,Felipe,Massa,1981-04-25,Brazilian,19
+mcnish,,http://en.wikipedia.org/wiki/Allan_McNish,Allan,McNish,1969-12-29,British,
+montoya,MON,http://en.wikipedia.org/wiki/Juan_Pablo_Montoya,Juan,Pablo Montoya,1975-09-20,Colombian,
+panis,,http://en.wikipedia.org/wiki/Olivier_Panis,Olivier,Panis,1966-09-02,French,
+raikkonen,RAI,http://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen,Kimi,Räikkönen,1979-10-17,Finnish,7
+salo,,http://en.wikipedia.org/wiki/Mika_Salo,Mika,Salo,1966-11-30,Finnish,
+sato,SAT,http://en.wikipedia.org/wiki/Takuma_Sato,Takuma,Sato,1977-01-28,Japanese,
+michael_schumacher,MSC,http://en.wikipedia.org/wiki/Michael_Schumacher,Michael,Schumacher,1969-01-03,German,
+ralf_schumacher,SCH,http://en.wikipedia.org/wiki/Ralf_Schumacher,Ralf,Schumacher,1975-06-30,German,
+trulli,TRU,http://en.wikipedia.org/wiki/Jarno_Trulli,Jarno,Trulli,1974-07-13,Italian,
+villeneuve,VIL,http://en.wikipedia.org/wiki/Jacques_Villeneuve,Jacques,Villeneuve,1971-04-09,Canadian,
+webber,WEB,http://en.wikipedia.org/wiki/Mark_Webber_(racing_driver),Mark,Webber,1976-08-27,Australian,
+yoong,,http://en.wikipedia.org/wiki/Alex_Yoong,Alex,Yoong,1976-07-20,Malaysian,

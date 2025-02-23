@@ -1,0 +1,31 @@
+statusId,count,status
+1,7674,Finished
+2,147,Disqualified
+3,1062,Accident
+4,854,Collision
+5,2026,Engine
+6,810,Gearbox
+7,321,Transmission
+8,214,Clutch
+9,139,Hydraulics
+10,316,Electrical
+11,4037,+1 Lap
+12,1613,+2 Laps
+13,731,+3 Laps
+14,405,+4 Laps
+15,221,+5 Laps
+16,153,+6 Laps
+17,100,+7 Laps
+18,52,+8 Laps
+19,38,+9 Laps
+20,795,Spun off
+21,44,Radiator
+22,431,Suspension
+23,254,Brakes
+24,61,Differential
+25,133,Overheating
+26,29,Mechanical
+27,55,Tyre
+28,1,Driver Seat
+29,41,Puncture
+30,25,Driveshaft

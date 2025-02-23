@@ -2,7 +2,7 @@
 
 ### **📌 Objective**
 
-In this project, we will **crawl real-time data** from [TheGioiDiDong](https://www.thegioididong.com/), process it using **ETL (Extract, Transform, Load)** techniques, store the data in **HDFS** or a database, and build a **Dockerized pipeline** for automation.
+In this project, we will **crawl real-time data** , process it using **ETL (Extract, Transform, Load)** techniques, store the data in **HDFS** or a database, and build a **Dockerized**.
 
 ---
 
@@ -30,11 +30,15 @@ In this project, we will **crawl real-time data** from [TheGioiDiDong](https://w
 
 ---
 
-# **📂 Step 1: Web Scraping TheGioiDiDong Data**
+# **📂 Step 1: Web Scraping Data**
 
 ### **1️⃣ Install Required Libraries**
 
 `pip install requests beautifulsoup4 selenium scrapy kafka-python`
+
+* OR
+
+call API
 
 ### **2️⃣ Setup Web Scraper (`crawler.py`)**
 

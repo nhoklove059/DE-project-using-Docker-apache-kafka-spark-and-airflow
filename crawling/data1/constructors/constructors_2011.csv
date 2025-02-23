@@ -1,0 +1,13 @@
+constructorId,url,name,nationality
+ferrari,http://en.wikipedia.org/wiki/Scuderia_Ferrari,Ferrari,Italian
+force_india,http://en.wikipedia.org/wiki/Racing_Point_Force_India,Force India,Indian
+hrt,http://en.wikipedia.org/wiki/Hispania_Racing,HRT,Spanish
+lotus_racing,http://en.wikipedia.org/wiki/Lotus_Racing,Lotus,Malaysian
+mclaren,http://en.wikipedia.org/wiki/McLaren,McLaren,British
+mercedes,http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One,Mercedes,German
+red_bull,http://en.wikipedia.org/wiki/Red_Bull_Racing,Red Bull,Austrian
+renault,http://en.wikipedia.org/wiki/Renault_in_Formula_One,Renault,French
+sauber,http://en.wikipedia.org/wiki/Sauber_Motorsport,Sauber,Swiss
+toro_rosso,http://en.wikipedia.org/wiki/Scuderia_Toro_Rosso,Toro Rosso,Italian
+virgin,http://en.wikipedia.org/wiki/Virgin_Racing,Virgin,British
+williams,http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering,Williams,British

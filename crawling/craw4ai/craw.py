@@ -1,8 +1,8 @@
-from craw4ai.spiders import BaseSpider
+from craw4ai import *
 
-class TheGioiDiDongSpider(BaseSpider):
-    name = "thegioididong_spider"
-    start_urls = ["https://www.thegioididong.com/laptop"]
+class TheGioiDiDongSpider():
+    name = "F1"
+    start_urls = ["https://www.formula1.com/en/results/2024/drivers"]
 
     # Use CSS selectors or XPath to extract the desired data
     rules = [

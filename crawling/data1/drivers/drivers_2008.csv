@@ -1,0 +1,23 @@
+driverId,permanentNumber,code,url,givenName,familyName,dateOfBirth,nationality
+alonso,14,ALO,http://en.wikipedia.org/wiki/Fernando_Alonso,Fernando,Alonso,1981-07-29,Spanish
+barrichello,,BAR,http://en.wikipedia.org/wiki/Rubens_Barrichello,Rubens,Barrichello,1972-05-23,Brazilian
+bourdais,,BOU,http://en.wikipedia.org/wiki/S%C3%A9bastien_Bourdais,Sébastien,Bourdais,1979-02-28,French
+button,22,BUT,http://en.wikipedia.org/wiki/Jenson_Button,Jenson,Button,1980-01-19,British
+coulthard,,COU,http://en.wikipedia.org/wiki/David_Coulthard,David,Coulthard,1971-03-27,British
+davidson,,DAV,http://en.wikipedia.org/wiki/Anthony_Davidson,Anthony,Davidson,1979-04-18,British
+fisichella,,FIS,http://en.wikipedia.org/wiki/Giancarlo_Fisichella,Giancarlo,Fisichella,1973-01-14,Italian
+glock,,GLO,http://en.wikipedia.org/wiki/Timo_Glock,Timo,Glock,1982-03-18,German
+hamilton,44,HAM,http://en.wikipedia.org/wiki/Lewis_Hamilton,Lewis,Hamilton,1985-01-07,British
+heidfeld,,HEI,http://en.wikipedia.org/wiki/Nick_Heidfeld,Nick,Heidfeld,1977-05-10,German
+kovalainen,,KOV,http://en.wikipedia.org/wiki/Heikki_Kovalainen,Heikki,Kovalainen,1981-10-19,Finnish
+kubica,88,KUB,http://en.wikipedia.org/wiki/Robert_Kubica,Robert,Kubica,1984-12-07,Polish
+massa,19,MAS,http://en.wikipedia.org/wiki/Felipe_Massa,Felipe,Massa,1981-04-25,Brazilian
+nakajima,,NAK,http://en.wikipedia.org/wiki/Kazuki_Nakajima,Kazuki,Nakajima,1985-01-11,Japanese
+piquet_jr,,PIQ,"http://en.wikipedia.org/wiki/Nelson_Piquet,_Jr.",Nelson,Piquet Jr.,1985-07-25,Brazilian
+raikkonen,7,RAI,http://en.wikipedia.org/wiki/Kimi_R%C3%A4ikk%C3%B6nen,Kimi,Räikkönen,1979-10-17,Finnish
+rosberg,6,ROS,http://en.wikipedia.org/wiki/Nico_Rosberg,Nico,Rosberg,1985-06-27,German
+sato,,SAT,http://en.wikipedia.org/wiki/Takuma_Sato,Takuma,Sato,1977-01-28,Japanese
+sutil,99,SUT,http://en.wikipedia.org/wiki/Adrian_Sutil,Adrian,Sutil,1983-01-11,German
+trulli,,TRU,http://en.wikipedia.org/wiki/Jarno_Trulli,Jarno,Trulli,1974-07-13,Italian
+vettel,5,VET,http://en.wikipedia.org/wiki/Sebastian_Vettel,Sebastian,Vettel,1987-07-03,German
+webber,,WEB,http://en.wikipedia.org/wiki/Mark_Webber_(racing_driver),Mark,Webber,1976-08-27,Australian
