@@ -9,8 +9,8 @@ import kaggle
 load_dotenv()
 
 # Thiết lập Kaggle API
-os.environ["KAGGLE_USERNAME"] = os.getenv("KAGGLE_USERNAME")
-os.environ["KAGGLE_KEY"] = os.getenv("KAGGLE_KEY")
+os.environ["KAGGLE_USERNAME"] = os.getenv("KAGGLE_USERNAME_1")
+os.environ["KAGGLE_KEY"] = os.getenv("KAGGLE_KEY_1")
 
 # Kafka Config
 KAFKA_BROKER = "localhost:9092"

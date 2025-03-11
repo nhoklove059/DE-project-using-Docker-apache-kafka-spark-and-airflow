@@ -29,7 +29,7 @@ services:
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: thegioididong
+      POSTGRES_DB: fomular1
     ports:
       - "5432:5432"
     volumes:

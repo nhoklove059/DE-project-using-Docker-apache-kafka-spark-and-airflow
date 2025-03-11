@@ -1,155 +1,66 @@
-# **📌 Real-Time Web Scraping, ETL, and Dockerized Data Pipeline for TheGioiDiDong** 🚀
+# **📌 Real-Time Web Scraping, ETL, and Dockerized Data Pipeline for Formular 1 API**🚀
 
-### **📌 Objective**
+### **Objective**
 
-In this project, we will **crawl real-time data** , process it using **ETL (Extract, Transform, Load)** techniques, store the data in **HDFS** or a database, and build a **Dockerized**.
+In this project, we will **crawl real-time data** , process it using **ETL (Extract, Transform, Load)** techniques, store the data in a database, and build a **Dockerized**.
 
----
+## Introduction
 
-## **📌 Tech Stack**
+This project implements a complete data pipeline for Formula 1 racing data using Python. The pipeline crawls data from the Ergast API, sends it to Kafka, processes it with PySpark, stores it in PostgreSQL, and automates the workflow with Apache Airflow. All components are containerized using Docker, making the system easy to deploy and maintain. The final data is ready to be visualized with Power BI.
 
-✅ **Scrapy / Selenium / BeautifulSoup** → Web Scraping
-✅ **Apache Kafka** → Real-time data ingestion
-✅ **PySpark** → ETL & data transformation
-✅ **PostgreSQL / MySQL / HDFS** → Data Storage
-✅ **Apache Airflow** → Workflow Orchestration
-✅ **Docker & Docker Compose** → Containerization
-✅ **Power BI / Tableau** → Data Visualization
+The system is designed to automatically update data on a monthly basis, ensuring your Formula 1 statistics remain current and comprehensive. This document provides a detailed guide on the project structure, setup instructions, and implementation details.
 
----
+## Project Architecture
 
-## **📌 Project Workflow**
+The data pipeline follows these key steps:
 
-1️⃣ **Web Scraping** → Crawl real-time product data from **TheGioiDiDong** (Price, Name, Brand, Ratings).
-2️⃣ **Data Streaming** → Send real-time data to  **Kafka** .
-3️⃣ **ETL Processing** → Process and clean the data using  **PySpark** .
-4️⃣ **Data Storage** → Store data in  **PostgreSQL, MySQL, or HDFS** .
-5️⃣ **Orchestration** → Use **Apache Airflow** to automate the pipeline.
-6️⃣ **Visualization** → Analyze product trends using  **Power BI / Tableau** .
-7️⃣ **Deployment** → Use **Docker & Docker Compose** for a fully containerized setup.
+1. Data is crawled from the Ergast API ([https://api.jolpi.ca/ergast/](https://api.jolpi.ca/ergast/))
+2. Raw data is sent to Apache Kafka for buffering and decoupling
+3. PySpark reads from Kafka and performs ETL operations
+4. Transformed data is stored in PostgreSQL database
+5. Apache Airflow orchestrates the entire process on a monthly schedule
+6. PowerBI connects to PostgreSQL for data visualization and analysis
 
----
-
-# **📂 Step 1: Web Scraping Data**
-
-### **1️⃣ Install Required Libraries**
-
-`pip install requests beautifulsoup4 selenium scrapy kafka-python`
-
-* OR
-
-call API
-
-### **2️⃣ Setup Web Scraper (`crawler.py`)**
-
-📌 **Start the Kafka Producer**
-
-`python crawler.py`
-
----
-
-# **📂 Step 2: Stream Data with Kafka**
-
-### **1️⃣ Start Kafka & Zookeeper**
-
-`docker-compose up -d zookeeper kafka`
-
-### **2️⃣ Create Kafka Topic**
-
-`docker exec -it kafka kafka-topics.sh --create --topic thegioididong_products --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1`
-
-### **3️⃣ Start Kafka Consumer**
-
-```python
-from kafka import KafkaConsumer
-import json
-
-consumer = KafkaConsumer(
-    "thegioididong_products",
-    bootstrap_servers="localhost:9092",
-    auto_offset_reset="earliest",
-    value_deserializer=lambda x: json.loads(x.decode("utf-8"))
-)
-
-for message in consumer:
-    print("Received:", message.value)
+## Project Structure
 
 ```
-
----
-
-# **📂 Step 3: ETL Processing with PySpark**
-
-### **1️⃣ Install PySpark**
-
-`pip install pyspark`
-
-### **2️⃣ Process Data Using PySpark (`spark_etl.py`)**
-
----
-
-# **📂 Step 4: Store Data in PostgreSQL**
-
-### **1️⃣ Start PostgreSQL in Docker**version: '3.9'
-
-`docker-compose up -d postgres`
-
-### **2️⃣ Create PostgreSQL Table**
-
-```python
-CREATE TABLE products (
-    id SERIAL PRIMARY KEY,
-    name TEXT,
-    price INT,
-    rating TEXT,
-    timestamp TIMESTAMP
-);
+formula1-data-pipeline/
+│
+├── docker-compose.yml           # Main Docker Compose configuration
+│
+├── src/                         # Source code directory
+│   ├── data_ingestion/          # API crawler code
+│   │   ├── __init__.py
+│   │   └── api_crawler.py       # Ergast API crawler implementation
+│   │
+│   ├── kafka_producer/          # Kafka producer code
+│   │   ├── __init__.py
+│   │   └── producer.py          # Kafka producer implementation
+│   │
+│   ├── spark_processor/         # PySpark processor code
+│   │   ├── __init__.py
+│   │   └── processor.py         # PySpark ETL implementation
+│   │
+│   └── database/                # Database utilities
+│       ├── __init__.py
+│       └── postgres_handler.py  # PostgreSQL handler
+│
+├── dags/                        # Airflow DAGs
+│   └── f1_pipeline_dag.py       # Main pipeline DAG
+│
+├── config/                      # Configuration files
+│   ├── __init__.py
+│   └── settings.py              # Application settings
+│
+├── scripts/                     # Utility scripts
+│   ├── setup_postgres.py        # Sets up PostgreSQL tables
+│   └── run_spark_job.py         # Manually runs Spark job
+│
+├── .env.example                 # Environment variables template
+├── requirements.txt             # Python dependencies
+└── README.md                    # Project documentation
 
 ```
-
----
-
-# **📂 Step 5: Automate with Apache Airflow**
-
-### **1️⃣ Install & Start Airflow**
-
-`docker-compose up -d airflow`
-
-### **2️⃣ Create Airflow DAG (`airflow_dag.py`)**
-
-📌 **Start Airflow Scheduler**
-
-`airflow scheduler`
-
-📌 **Start Airflow Web UI**
-
-`airflow webserver`
-
-📌 Access **[http://localhost:8080]()**
-
----
-
-# **📂 Step 6: Data Visualization**
-
-### **Connect PostgreSQL to Power BI/Tableau**
-
-* Import `products` table and create  **dashboards** :
-  * 📊 **Product Price Trends**
-  * ⭐ **Top-rated products**
-  * 📈 **Sales Performance by Category**
-
----
-
-# **🚀 Final Deliverables**
-
-✅ **Real-time Web Scraper for TheGioiDiDong**
-✅ **Kafka Streaming Pipeline**
-✅ **PySpark ETL Processing**
-✅ **Data Stored in PostgreSQL**
-✅ **Automated with Airflow**
-✅ **Dockerized Setup**
-
----
 
 ## **📌 Next Steps**
 

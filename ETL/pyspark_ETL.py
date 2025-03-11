@@ -9,16 +9,26 @@ KAFKA_BROKER = "localhost:9092"
 TOPIC = "f1_data"
 
 # PostgreSQL Config
-DB_HOST = "localhost"
-DB_NAME = "f1_db"
-DB_USER = "postgres"
-DB_PASS = "password"
+DB_HOST = "localhost:5432"
+DB_NAME = "fomular1"
+DB_USER = "admin"
+DB_PASS = "admin"
 
 # Khởi tạo Spark Session
 spark = SparkSession.builder \
     .appName("KafkaF1ETL") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2") \
     .getOrCreate()
+    
+# df.write \
+#     .format("jdbc") \
+#     .option("url", "jdbc:postgresql://localhost:5432/f1_data") \
+#     .option("dbtable", "formula1") \
+#     .option("user", "admin") \
+#     .option("password", "admin") \
+#     .option("driver", "org.postgresql.Driver") \
+#     .mode("overwrite") \
+#     .save()
 
 # Lưu dữ liệu vào PostgreSQL
 def save_to_postgres(df, table_name):
