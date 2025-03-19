@@ -26,7 +26,7 @@ spark = SparkSession.builder \
     .appName("KafkaF1ETL") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2") \
     .getOrCreate()
-    
+
 
 # Lưu dữ liệu vào PostgreSQL
 def save_to_postgres(df, table_name):
@@ -36,7 +36,7 @@ def save_to_postgres(df, table_name):
             user=DB_USER,
             password=DB_PASS,
             host="localhost",
-            port="5432"
+            port="5432",
         )
         cursor = conn.cursor()
 
@@ -53,15 +53,17 @@ def save_to_postgres(df, table_name):
 
         row_count = 0
         for row in df.rdd.collect():
-            values = tuple(None if v == "\\N" else v for v in row.asDict().values())  # Thay \N thành None
-            # try:
-            cursor.execute(
-                f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders}) ON CONFLICT DO NOTHING",
-                values,
-            )
-            row_count += 1
-            # except Exception as row_error:
-            #     print(f"❌ Lỗi khi insert row {values} vào {table_name}: {row_error}")
+            values = tuple(
+                None if v in ["\\N", "NaN", ""] else v for v in row.asDict().values()
+            )  # Xử lý NaN
+            try:
+                cursor.execute(
+                    f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders}) ON CONFLICT DO NOTHING",
+                    values,
+                )
+                row_count += 1
+            except Exception as row_error:
+                print(f"❌ Lỗi khi insert row {values} vào {table_name}: {row_error}")
 
         conn.commit()
         cursor.close()
@@ -79,11 +81,12 @@ def consume_kafka():
         TOPIC,
         bootstrap_servers=KAFKA_BROKER,
         value_deserializer=lambda x: json.loads(x.decode("utf-8")),
-        consumer_timeout_ms=15000  # Thoát sau 15 giây nếu không có dữ liệu
+        auto_offset_reset="earliest",  # This crucial line was added
+        consumer_timeout_ms=15000,
     )
-    
+
     print("✅ Kết nối Kafka thành công. Đang chờ dữ liệu...")
-    
+
     data_dict = {}
 
     for msg in consumer:
@@ -92,10 +95,10 @@ def consume_kafka():
         row_data = message["data"]
 
         table_name = filename.replace(".csv", "").lower()
-        
+
         if table_name not in data_dict:
             data_dict[table_name] = []
-        
+
         data_dict[table_name].append(row_data)
 
     if not data_dict:
@@ -113,7 +116,8 @@ def insert_data_in_order(data_dict):
         ["races"],  # Nhóm 2: Phụ thuộc vào nhóm 1
         ["qualifying", "sprint_results", "results"],  # Nhóm 3: Phụ thuộc vào `races`
         ["lap_times", "pit_stops"],  # Nhóm 4: Phụ thuộc vào `races` và `drivers`
-        ["driver_standings", "constructor_standings"]  # Nhóm 5: Phụ thuộc vào `races`, `drivers`, `constructors`
+        ["driver_standings"], # Nhóm 5: Phụ thuộc vào `races`, `drivers`, `constructors`
+        ["constructor_standings", "constructor_results"]  
     ]
 
     for group in table_priority:
