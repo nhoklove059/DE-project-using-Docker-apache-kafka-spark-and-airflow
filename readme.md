@@ -10,6 +10,13 @@ This project implements a complete data pipeline for Formula 1 racing data using
 
 The system is designed to automatically update data on a monthly basis, ensuring your Formula 1 statistics remain current and comprehensive. This document provides a detailed guide on the project structure, setup instructions, and implementation details.
 
+## Requirement
+
+- pyspark
+- hadoop
+- python 3.11
+- JDK-11 or JDK-17
+
 ## Project Architecture
 
 The data pipeline follows these key steps:
@@ -20,8 +27,7 @@ The data pipeline follows these key steps:
 4. Transformed data is stored in PostgreSQL database
 5. Apache Airflow orchestrates the entire process on a monthly schedule
 6. PowerBI connects to PostgreSQL for data visualization and analysis
-
-## Project Structure
+7. Project Structure
 
 ```
 formula1-data-pipeline/

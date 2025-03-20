@@ -35,17 +35,17 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  # airflow:
-  #   image: apache/airflow:latest
-  #   container_name: airflow
-  #   restart: always
-  #   environment:
-  #     - AIRFLOW__CORE__EXECUTOR=LocalExecutor
-  #     - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://admin:admin@postgres:5432/airflow
-  #   depends_on:
-  #     - postgres
-  #   ports:
-  #     - "8081:8081"
+  airflow:
+    image: apache/airflow:latest
+    container_name: airflow
+    restart: always
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://admin:admin@postgres:5432/airflow
+    depends_on:
+      - postgres
+    ports:
+      - "8081:8081"
 
 volumes:
   postgres_data:

@@ -81,7 +81,7 @@ def consume_kafka():
         TOPIC,
         bootstrap_servers=KAFKA_BROKER,
         value_deserializer=lambda x: json.loads(x.decode("utf-8")),
-        auto_offset_reset="earliest",  # This crucial line was added
+        auto_offset_reset="earliest",
         consumer_timeout_ms=15000,
     )
 
@@ -114,8 +114,8 @@ def insert_data_in_order(data_dict):
     table_priority = [
         ["circuits", "constructors", "drivers", "seasons", "status"],  # Nhóm 1: Không có khóa ngoại
         ["races"],  # Nhóm 2: Phụ thuộc vào nhóm 1
-        ["qualifying", "sprint_results", "results"],  # Nhóm 3: Phụ thuộc vào `races`
-        ["lap_times", "pit_stops"],  # Nhóm 4: Phụ thuộc vào `races` và `drivers`
+        ["qualifying", "results"],  # Nhóm 3: Phụ thuộc vào `races`
+        ["lap_times", "pit_stops", "sprint_results"],  # Nhóm 4: Phụ thuộc vào `races` và `drivers`, `results`
         ["driver_standings"], # Nhóm 5: Phụ thuộc vào `races`, `drivers`, `constructors`
         ["constructor_standings", "constructor_results"]  
     ]
